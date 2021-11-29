@@ -1,0 +1,13 @@
+.custom-div {
+    border: 1px solid red;
+    height: 100px;
+    width: 500px;
+    margin-bottom: 100px;
+    padding-left: 15px;
+}
+
+#div-3 {
+    border: 5px solid green;
+    height: 100px;
+    width: 800px;
+}
