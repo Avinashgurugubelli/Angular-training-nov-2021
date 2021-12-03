@@ -20,6 +20,14 @@ console.log("last name: " + lastName);
 console.log("full name: " + fullName);
 // console.log(typeof firstName);
 
+// String methods
+let fruits = "Apple, mango, kiwi";
+// checking the length of the string.
+console.log("Fruits length: "+ String(fruits.length));
+// Substring
+console.log("Fruits sub string: "+ fruits.substring(7, 14))
+
+
 // Concatinating different datatypes
 console.log(a + firstName);
 
