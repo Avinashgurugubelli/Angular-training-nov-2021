@@ -18,6 +18,9 @@ let arrayLen = Math.max(array1.length, array2.length);
 
 let totalsum = 0;
 for (let i = 0; i < arrayLen; i++) {
+    const cv = array1[i];
+    const prv = array1[i - 1];
+    const ci = i;
     // Terinary operator
     // const val = array1[i] != undefined ? array1[i] : 0;
     // const val2 = array2[i] != undefined ? array2[i] : 0;
@@ -56,10 +59,10 @@ console.log(isEligibleToVote(10));
 console.log(isEligibleToVote(40));
 console.log(isEligibleToVote(18));
 
-
+// let array1 = [1, 3, 5, 7];
 array1.reduce((p, cv, ci, arr) => {
-    console.log("Prev value: "+ p);
-    console.log("current value: "+ cv);
-    console.log("current index: "+ ci);
-    console.log("array "+ arr);
+    console.log("Prev value: " + p);
+    console.log("current value: " + cv);
+    console.log("current index: " + ci);
+    console.log("array " + arr);
 });
