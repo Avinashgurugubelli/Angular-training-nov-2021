@@ -1,0 +1,19 @@
+{
+  "name": "type-script",
+  "version": "1.0.0",
+  "description": "Sample Typescript project",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build"
+  },
+  "author": "Avinash",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "eslint": "^8.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {}
+}
