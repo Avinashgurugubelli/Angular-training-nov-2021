@@ -1,0 +1,5 @@
+- Clone the repository
+- Go to cloned repository
+- open cmd
+- run ```npm install`` -> this will create node_module folder with all dependencies.
+- run to create .js files from .ts files      ```npm run build```
