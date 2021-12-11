@@ -7,14 +7,16 @@ function myPromise() {
     console.log("myPromise functon [RETURN]");
     return p;
 }
-console.log("myPromise functon called");
 
-myPromise()
-    .then((value) => console.log(value))
-    .catch((error) => console.log(error))
-    .finally("myPromise: Finally block executed");
 
-console.log("myPromise functon call completed.");
+// console.log("myPromise functon called");
+
+// myPromise()
+//     .then((value) => console.log(value))
+//     .catch((error) => console.log(error))
+//     .finally(() => console.log("myPromise: Finally block executed"));
+
+// console.log("myPromise functon call completed.");
 
 /**
  * Output:
@@ -26,4 +28,24 @@ console.log("myPromise functon call completed.");
  *  myPromise functon call completed.
  * 
  *  Welcome to JS
+ *  myPromise: Finally block executed
  */
+
+// Calling a promise - second way usin Async await
+
+async function callPromise() {
+    try {
+        console.log("Calling a promise");
+        let value = await myPromise();
+        console.log("Value: " + value);
+        console.log("Promise call completed");
+    }
+    catch (ex) {
+        console.log(ex);
+    }
+    finally {
+        console.log("myPromise: Finally block executed");
+    }
+}
+
+callPromise();

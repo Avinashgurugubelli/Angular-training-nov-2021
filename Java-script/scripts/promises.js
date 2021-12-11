@@ -31,7 +31,8 @@ prom.then((value) => {
     console.log(error);
 }).finally(() => {
     // This finally block will be executed every time either in case of success/error i.e resolve/reject
-    console.log("Finally block executed.")
+    console.log("Finally block executed.");
 });
+
 
 
