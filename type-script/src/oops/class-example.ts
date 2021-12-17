@@ -45,15 +45,46 @@
  * -------
  * class <ClassName> {}
  * Here -> class -> is a keyWord
+ * 
+ * Getter: access the private property
+ * Setter: Setting the value of the private property.
  */
 
 class Car {
+    private availableColors: string[] = ['blue', 'white', 'red', 'gray'];
     // properties
     private year: number;
     public model: string;
-    private color: string;
-    private topSpeed: number;
-    private enginePower: number;
+    private _color: string;
+    private _topSpeed: number;
+    private _enginePower: number;
+
+    /**
+     * get -> a keyword
+     * Getter for top speed
+     */
+    public get topSpeed() {
+        return this._topSpeed;
+    }
+
+    /**
+     * Getter for color property
+     */
+    public get color() {
+        return this._color;
+    }
+
+    /**
+     * Setter for color
+     */
+    public set color(value: string) {
+        if (this.availableColors.includes(value)) {
+            this._color = value;
+        }
+        else {
+            console.log(`color: ${value} is not accepted`);
+        }
+    }
 
     /**
      * constructor:
@@ -65,9 +96,9 @@ class Car {
         // To access the properties inside a class we use this.
         this.year = year;
         this.model = model;
-        this.color = color;
-        this.topSpeed = topSpeed;
-        this.enginePower = enginePower;
+        this._color = color;
+        this._topSpeed = topSpeed;
+        this._enginePower = enginePower;
     }
 
     // Methods
@@ -75,9 +106,9 @@ class Car {
         console.log(`
         year: ${this.year}, 
         model: ${this.model},
-        color: ${this.color},
-        topSpeed: ${this.topSpeed},
-        enginerPower: ${this.enginePower},
+        color: ${this._color},
+        topSpeed: ${this._topSpeed},
+        enginerPower: ${this._enginePower},
         `);
     }
 
@@ -90,7 +121,16 @@ class Car {
  * Here - new -> is a key word
  */
 const waganor = new Car(2020, 'Waganor', 'Red', 100, 1200);
+const shiftDesire = new Car(2019, 'Shift desire', 'white', 140, 1800);
 
 // calling a method of a class
 waganor.print();
+
+// for getter there is no need of () at the end
+console.log(waganor.topSpeed);
+
+waganor.color = 'Green';
+
+waganor.print();
+shiftDesire.print();
 
