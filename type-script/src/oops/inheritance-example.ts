@@ -11,7 +11,12 @@ import { Idproof } from "../models/Idproof";
  * 
  */
 
-class Person {
+export class Human {
+    public hands: string[];
+    public color: string;
+    public eyes: string[];
+}
+class Person extends Human {
     public firstName: string;
     public lastName: string;
     public dob: string;
@@ -19,6 +24,7 @@ class Person {
     protected idProofs: Idproof;
 
     constructor(firstName: string, lastName: string, dob: string, address: Address, idproofs: Idproof) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
