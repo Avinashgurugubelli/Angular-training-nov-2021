@@ -1,3 +1,4 @@
+
 import { Address } from "../models/address";
 import { Idproof } from "../models/Idproof";
 
@@ -16,15 +17,14 @@ export class Human {
     public color: string;
     public eyes: string[];
 }
-class Person extends Human {
+export class Person {
     public firstName: string;
     public lastName: string;
     public dob: string;
     public address: Address;
     protected idProofs: Idproof;
 
-    constructor(firstName: string, lastName: string, dob: string, address: Address, idproofs: Idproof) {
-        super();
+    constructor(firstName: string, lastName: string, dob: string, address: Address, idproofs?: Idproof) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;

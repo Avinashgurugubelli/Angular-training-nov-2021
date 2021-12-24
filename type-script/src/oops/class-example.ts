@@ -50,8 +50,19 @@
  * Setter: Setting the value of the private property.
  */
 
+
+
+enum ColorEnum {
+    darkBlue = 'blue',
+    white = 'white',
+    red = 'red'
+}
+
+class exe {
+    private color: string = ColorEnum.darkBlue;
+}
 class Car {
-    private availableColors: string[] = ['blue', 'white', 'red', 'gray'];
+    private availableColors: string[] = [ColorEnum.darkBlue, , ColorEnum.white, ColorEnum.red];
     // properties
     private year: number;
     public model: string;

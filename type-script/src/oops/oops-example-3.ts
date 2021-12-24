@@ -1,8 +1,20 @@
 /**
  * When ever there exists a WHOLE - PART relationship between two classes then their exists either
+ * 
  *  1) Agggregation  (or)
  *  2) Composition
  */
+
+
+/**
+ * Whole     | part       |
+ * ------------------------
+ * Team      | player
+ * club      | memeber
+ * Library   | Book
+ * Car       | Music player
+ */
+
 
 /**
  * Aggregation:
