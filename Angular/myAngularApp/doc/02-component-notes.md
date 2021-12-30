@@ -46,7 +46,7 @@ export class AppComponent {
 ```
 
 ## Creating a new component
-
+- Angular documentation: https://angular.io/guide/component-overview
 - create a folder with the component name inside app folder
 - create a template file(.html) in the folder
 	- naming convention: component-name.component.html (example: home.component.html, about-us.component.html)

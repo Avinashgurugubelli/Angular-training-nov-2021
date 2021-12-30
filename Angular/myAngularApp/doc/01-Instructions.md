@@ -20,3 +20,24 @@ https://nodejs.org/en/download/
 
 ## Introduction to Angular:
 - `Component Based Development` : Component based web development is the future of web development. In Angular 2, "everything is a component". Components are the building blocks of an Angular application. The advantage of the component-based approach is that, it facilitates greater code reuse. From unit testing standpoint, the use of components make Angular2 more testable
+
+## Workspace and project file structure:
+    - Refer: https://angular.io/guide/file-structure#workspace-configuration-files
+  
+## Adding bootstrap 5 to angular project:
+- install bootstrap 5 package:
+    - npm i bootstrap
+- install bootstrap 5 icons:
+    - npm i bootstrap-icons
+- add the following scripts in angular.json
+  - path: `architect.build.options.styles, architect.build.options.scripts`
+   
+    ```
+    "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+    ```
+- 
