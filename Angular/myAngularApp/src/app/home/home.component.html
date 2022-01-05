@@ -1,3 +1,19 @@
 <h1 id="home-header">
     Home component from template from file
 </h1>
+
+<h3>Name: {{name}}</h3>
+
+<p>Details: {{details | json}}</p>
+
+<p>sum: {{5+2}}</p>
+
+<!-- Interpolation technique -->
+<img src="{{imagePath}}" alt="" srcset="">
+
+<img src="../../{{imagePath2}}" alt="" srcset="">
+
+<button disabled="{{isDisabled}}">My Sample Button</button>
+
+<!-- Property binding -->
+<button [disabled]="isDisabled">My Property binding button</button>
