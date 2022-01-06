@@ -9,11 +9,20 @@
 <p>sum: {{5+2}}</p>
 
 <!-- Interpolation technique -->
-<img src="{{imagePath}}" alt="" srcset="">
+<!-- <img src="{{imagePath}}" alt="" srcset=""> -->
 
-<img src="../../{{imagePath2}}" alt="" srcset="">
+<!-- <img src="../../{{imagePath2}}" alt="" srcset=""> -->
 
-<button disabled="{{isDisabled}}">My Sample Button</button>
+<!-- <button disabled="{{isDisabled}}">My Sample Button</button> -->
 
 <!-- Property binding -->
-<button [disabled]="isDisabled">My Property binding button</button>
+<!-- <button [disabled]="isDisabled">My Property binding button</button> -->
+
+<!-- Event binding -->
+<button class="btn btn-success" (click)="buttonClick('Jack')">{{buttonText}}</button>
+
+<input type="text" class="form-control" (keypress)="texboxKeyPress($event)" id="text-1">
+
+<!-- Two way binding -->
+<input type="text" class="form-control w-50" name="name" id="text-2" [(ngModel)]="searchText" (ngModelChange)="updateModel($event)" placeholder="Type here.....">
+<h3>Typed value: {{searchText}}</h3>
