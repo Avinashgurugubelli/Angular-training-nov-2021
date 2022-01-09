@@ -1,3 +1,4 @@
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavBarComponent
+    NavBarComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

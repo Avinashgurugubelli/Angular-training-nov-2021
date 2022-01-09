@@ -26,3 +26,34 @@
 <!-- Two way binding -->
 <input type="text" class="form-control w-50" name="name" id="text-2" [(ngModel)]="searchText" (ngModelChange)="updateModel($event)" placeholder="Type here.....">
 <h3>Typed value: {{searchText}}</h3>
+
+
+<button class="btn btn-primary" (click)="ToggleNgClass()">Toggle class</button>
+
+<p [ngClass]="isSpecial ? 'special' : ''">Hello NGClass</p>
+
+<!-- Conditional rendering -->
+
+<button class="btn btn-info" (click)="displayText()">{{showText ? 'hide text': 'Display text'}}</button>
+
+<!-- <ng-container ></ng-container> -->
+
+<!-- <div>
+    <p>DV Para 1</p>
+    <p>DIV Para 2</p>
+</div> -->
+
+<ng-container *ngIf="showText; else placeHolder">
+    <p>Para 1</p>
+    <p>Para 2</p>
+</ng-container>
+
+<!-- here  #placeHolder is called template variable-->
+<ng-template #placeHolder>
+    <p>Click display text button to render the Text</p>
+</ng-template>
+
+
+
+
+
