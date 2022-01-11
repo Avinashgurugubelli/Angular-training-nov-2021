@@ -12,6 +12,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email Id</th>
+            <th>Salary</th>
             <th>Row Index</th>
             <th>Is First Row</th>
             <th>Is Last Row</th>
@@ -25,13 +26,16 @@
             {{item.id}}
         </td>
         <td>
-            {{item.firstName}}
+            {{item.firstName | uppercase}}
         </td>
         <td>
             {{item.lastName}}
         </td>
         <td>
-            {{item.emailId}}
+            {{item.emailId | lowercase}}
+        </td>
+        <td>
+            {{item.salary | currency: 'USD'}}
         </td>
         <td>{{i}}</td>
         <td>{{isFirst}}</td>

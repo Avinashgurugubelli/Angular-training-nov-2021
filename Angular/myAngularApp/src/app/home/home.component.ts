@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 })
 export class HomeComponent {
 
+    public color: string = 'yellow';
     public buttonText = 'Click me'
     public name: string = 'Jack';
     public imagePath: string = '../../assets/images/image-1.jpg';
