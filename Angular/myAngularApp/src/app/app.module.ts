@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { GenderPipe } from './pipes/gender-title.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     HomeComponent,
     NavBarComponent,
     EmployeeListComponent,
-    HighlightDirective
+    HighlightDirective,
+    GenderPipe
   ],
   imports: [
     BrowserModule,

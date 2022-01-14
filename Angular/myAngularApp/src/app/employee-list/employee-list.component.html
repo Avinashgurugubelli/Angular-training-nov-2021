@@ -1,9 +1,19 @@
 <h1 style="text-align: center; color: coral;">Employee List</h1>
 
 
-<button class="btn btn-secondary" (click)="loadData()">
+<!-- <button class="btn btn-secondary" (click)="loadData()">
     Load data
-</button>
+</button> -->
+
+<button type="button" class="btn btn-primary me-4" (click)="filterEmployees('all')">
+    All <span class="badge bg-danger">{{getAllEmployeesCount()}}</span>
+  </button>
+<button type="button" class="btn btn-primary mx-4" (click)="filterEmployees('male')">
+    Male <span class="badge bg-danger">{{getMaleEmployeesCount()}}</span>
+  </button>
+  <button type="button" class="btn btn-primary mx-4" (click)="filterEmployees('female')">
+    Female <span class="badge bg-danger">{{getFemaleEmployeesCount()}}</span>
+  </button>
 
 <table class="table table-hover">
     <thead>
@@ -13,6 +23,7 @@
             <th>Last Name</th>
             <th>Email Id</th>
             <th>Salary</th>
+            <th>Skills</th>
             <th>Row Index</th>
             <th>Is First Row</th>
             <th>Is Last Row</th>
@@ -21,12 +32,12 @@
         </tr>
     </thead>
     <tbody>
-       <tr *ngFor="let item of employees; let i = index; let isFirst = first; let islast = last; let isEven =  even; let isOdd = odd">
+       <tr *ngFor="let item of employeesToShow; let i = index; let isFirst = first; let islast = last; let isEven =  even; let isOdd = odd">
         <td>
             {{item.id}}
         </td>
         <td>
-            {{item.firstName | uppercase}}
+            {{item.firstName  | genderTitle: item.gender}}
         </td>
         <td>
             {{item.lastName}}
@@ -36,6 +47,12 @@
         </td>
         <td>
             {{item.salary | currency: 'USD'}}
+        </td>
+        <td>
+            {{item.workExp['DontNet']}}
+            <!-- <ng-container *ngFor="let item of item.workExp | keyvalue">
+                <span>{{item.key}}: </span> <span>{{item.value}}</span>
+            </ng-container> -->
         </td>
         <td>{{i}}</td>
         <td>{{isFirst}}</td>
