@@ -1,0 +1,13 @@
+<div style="border: 5px solid blue; width: 85%;" class="p-3">
+
+    <h4>Employee Filter Component</h4>
+    <button type="button" class="btn btn-primary me-4" (click)="filterButtonClick('all')">
+        All <span class="badge bg-danger">{{allEmployeeCount}}</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-4" (click)="filterButtonClick('male')">
+        Male <span class="badge bg-danger">{{maleEmployeeCount}}</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-4" (click)="filterButtonClick('female')">
+        Female <span class="badge bg-danger">{{femaleEmployeeCount}}</span>
+    </button>
+</div>

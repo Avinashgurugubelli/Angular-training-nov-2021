@@ -1,0 +1,58 @@
+<div style="border: 5px solid red; width: 95%" class="m-4 p-4">
+    <h3 class="my-3">Employee Table Component</h3>
+
+    <employee-filter [allEmployeeCount]="getAllEmployeesCount()" [maleEmployeeCount]="getMaleEmployeesCount()"
+        [femaleEmployeeCount]="getFemaleEmployeesCount()" (choice)="onChoose($event)"></employee-filter>
+
+    <table class="table table-hover my-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Id</th>
+                <th>Salary</th>
+                <th>Skills</th>
+                <th>Row Index</th>
+                <th>Is First Row</th>
+                <th>Is Last Row</th>
+                <th>Is Even Row</th>
+                <th>Is Odd Row</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let item of employeesToShow; let i = index; let isFirst = first; let islast = last; let isEven =  even; let isOdd = odd">
+                <td>
+                    {{item.id}}
+                </td>
+                <td>
+                    {{item.firstName | genderTitle: item.gender}}
+                </td>
+                <td>
+                    {{item.lastName}}
+                </td>
+                <td>
+                    {{item.emailId | lowercase}}
+                </td>
+                <td>
+                    {{item.salary | currency: 'USD'}}
+                </td>
+                <td>
+                    {{item.workExp['DontNet']}}
+                    <!-- <ng-container *ngFor="let item of item.workExp | keyvalue">
+                    <span>{{item.key}}: </span> <span>{{item.value}}</span>
+                </ng-container> -->
+                </td>
+                <td>{{i}}</td>
+                <td>{{isFirst}}</td>
+                <td>{{islast}}</td>
+                <td>{{isEven}}</td>
+                <td>{{isOdd}}</td>
+            </tr>
+            <tr *ngIf="employees.length == 0">
+                <td colspan="4">No data to display. click load data to view.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

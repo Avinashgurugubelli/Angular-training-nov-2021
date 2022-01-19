@@ -1,3 +1,5 @@
+import { EmployeeFilterComponent } from './nested-components/employee-filter/employee-filter.component';
+import { EmployeeTableComponent } from './nested-components/employees-table/employees-table.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +19,9 @@ import { GenderPipe } from './pipes/gender-title.pipe';
     NavBarComponent,
     EmployeeListComponent,
     HighlightDirective,
-    GenderPipe
+    GenderPipe,
+    EmployeeTableComponent,
+    EmployeeFilterComponent
   ],
   imports: [
     BrowserModule,

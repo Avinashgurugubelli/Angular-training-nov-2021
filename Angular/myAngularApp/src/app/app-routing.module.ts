@@ -1,3 +1,4 @@
+import { EmployeeTableComponent } from './nested-components/employees-table/employees-table.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'employee-list', component: EmployeeListComponent
+  },
+  {
+    path: 'nested-component-example', component: EmployeeTableComponent
   }
 ];
 
