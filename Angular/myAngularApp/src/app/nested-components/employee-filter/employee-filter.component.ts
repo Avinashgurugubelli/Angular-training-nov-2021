@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { EmployeeService } from '../services/employee.service';
 
 
 @Component({
@@ -19,9 +20,12 @@ export class EmployeeFilterComponent implements OnInit {
      */
     @Output() public choice: EventEmitter<String> = new EventEmitter();
 
-    constructor() { }
+    constructor(private employeeService: EmployeeService) {}
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log("Printing employees from Employee Filter component");
+        console.log(this.employeeService.employees);
+     }
 
     public filterButtonClick(value:string) {
         this.choice.emit(value);

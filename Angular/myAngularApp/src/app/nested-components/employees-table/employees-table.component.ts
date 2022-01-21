@@ -1,3 +1,4 @@
+import { EmployeeService } from './../services/employee.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/model/employee';
 
@@ -10,112 +11,35 @@ export class EmployeeTableComponent implements OnInit {
     public employeesToShow: Employee[] = [];
 
     public employees: Employee[] = [];
+    
+    // Here the instance of the employeeService will be provided by angular Dependency injection
+    // So you no need to create an object to EmployeeService manually
+    constructor(private employeeService: EmployeeService) { }
 
     public getAllEmployeesCount(): number {
-        return this.employees.length;
+        // Calling the employee service public method
+        return this.employeeService.getAllEmployeesCount();
     }
 
     public getMaleEmployeesCount(): number {
-        return this.employees.filter((employee: Employee) => employee.gender.toLowerCase() === 'male').length
+         // Calling the employee service public method
+        return this.employeeService.getMaleEmployeesCount();
     }
 
     public getFemaleEmployeesCount(): number {
-        return this.employees.filter((employee: Employee) => employee.gender.toLowerCase() === 'female').length
+         // Calling the employee service public method
+        return this.employeeService.getFemaleEmployeesCount();
     }
 
     public filterEmployees(value: string) {
-        if (value.toLowerCase() === 'male' || value.toLowerCase() === 'female') {
-            this.employeesToShow = this.employees.filter((e: Employee) => e.gender.toLowerCase() === value);
-        }
-        else {
-            this.employeesToShow = this.employees;
-        }
+        // Calling the employee service public method
+        this.employeesToShow = this.employeeService.filterEmployees(value);
     }
 
 
     public loadData(): void {
-        // this.showData = true;
-        this.employees = [{
-            id: 1,
-            firstName: 'Jack',
-            lastName: 'Doe',
-            emailId: 'jack@email.com',
-            salary: 10000,
-            gender: 'male',
-            workExp: {
-                "JS": 4.5,
-                "DontNet": 5,
-                "Angular": 10
-            }
-        },
-        {
-            id: 2,
-            firstName: 'Jhon',
-            lastName: 'Doe',
-            emailId: 'Jhon@email.com',
-            salary: 20000,
-            gender: 'male',
-            workExp: {
-                "JS": 4.5,
-                "DontNet": 6,
-                "Angular": 10
-            }
-        },
-        {
-            id: 3,
-            firstName: 'Jim',
-            lastName: 'Deppe',
-            emailId: 'Jim@email.com',
-            salary: 30000,
-            gender: 'female',
-            workExp: {
-                "JS": 4.5,
-                "DontNet": 10,
-                "Angular": 15
-            }
-        },
-        {
-            id: 4,
-            firstName: 'Jessy',
-            lastName: 'Don',
-            emailId: 'Jessy@email.com',
-            salary: 40000,
-            gender: 'female',
-            workExp: {
-                "JS": 4.5,
-                "DontNet": 5,
-                "Angular": 10
-            }
-        },
-        {
-            id: 5,
-            firstName: 'Martin',
-            lastName: 'LK',
-            emailId: 'Martin@email.com',
-            salary: 500000,
-            gender: 'male',
-            workExp: {
-                "JS": 4.5,
-                "DontNet": 15,
-                "Angular": 7
-            }
-        },
-        {
-            id: 6,
-            firstName: 'Max',
-            lastName: 'kollar',
-            emailId: 'Max@email.com',
-            salary: 60000,
-            gender: 'male',
-            workExp: {
-                "JS": 8,
-                "DontNet": 5,
-                "Angular": 10
-            }
-        }]
-    }
-
-    constructor() {
+        // Accessing the getter from the employee service class
+        this.employees = this.employeeService.employees;
     }
 
     ngOnInit() {

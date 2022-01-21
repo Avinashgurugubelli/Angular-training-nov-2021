@@ -1,3 +1,4 @@
+import { EmployeeService } from './nested-components/services/employee.service';
 import { EmployeeFilterComponent } from './nested-components/employee-filter/employee-filter.component';
 import { EmployeeTableComponent } from './nested-components/employees-table/employees-table.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
@@ -28,7 +29,9 @@ import { GenderPipe } from './pipes/gender-title.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    EmployeeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
