@@ -1,3 +1,4 @@
+import { SubscriberTwoComponent } from './observables/components/subscriber-two/subscriber-two.component';
 import { EmployeeService } from './nested-components/services/employee.service';
 import { EmployeeFilterComponent } from './nested-components/employee-filter/employee-filter.component';
 import { EmployeeTableComponent } from './nested-components/employees-table/employees-table.component';
@@ -12,6 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { GenderPipe } from './pipes/gender-title.pipe';
+import { SubscriberComponent } from './observables/components/subscriber/subscriber.component';
+import { EventGeneratorComponent } from './observables/components/event-generator/event-generator.component';
+import { ObservableContainerComponent } from './observables/components/observable-container/observable-container.component';
+import { MessageGeneratorComponent } from './observables/components/message-generator/message-generator.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { GenderPipe } from './pipes/gender-title.pipe';
     HighlightDirective,
     GenderPipe,
     EmployeeTableComponent,
-    EmployeeFilterComponent
+    EmployeeFilterComponent,
+    SubscriberComponent,
+    EventGeneratorComponent,
+    ObservableContainerComponent,
+    SubscriberTwoComponent,
+    MessageGeneratorComponent
   ],
   imports: [
     BrowserModule,

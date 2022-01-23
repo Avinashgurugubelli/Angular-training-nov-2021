@@ -1,0 +1,11 @@
+<div style="border: 3px solid rebeccapurple;" class="my-4 py-4 w-60 mx-5 h-100 px-5">
+
+    <h1 style="color: darkkhaki; text-align: center;">Observable examples</h1>
+
+    <event-generator (onMessage)="msgReceiver($event)"></event-generator>
+
+    <div class="my-5">
+        <p style="color: darkorange;"><span style="font-weight: bold;">Received Message: </span>
+            <span>{{receivedMessage}}</span></p>
+    </div>
+</div>
