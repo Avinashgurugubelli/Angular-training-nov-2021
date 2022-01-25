@@ -17,6 +17,7 @@ import { SubscriberComponent } from './observables/components/subscriber/subscri
 import { EventGeneratorComponent } from './observables/components/event-generator/event-generator.component';
 import { ObservableContainerComponent } from './observables/components/observable-container/observable-container.component';
 import { MessageGeneratorComponent } from './observables/components/message-generator/message-generator.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MessageGeneratorComponent } from './observables/components/message-gene
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],

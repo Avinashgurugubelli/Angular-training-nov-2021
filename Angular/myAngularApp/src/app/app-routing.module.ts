@@ -21,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'observable-with-sibling-example', component: ObservableContainerComponent
+  },
+  {
+    path: 'articles',
+    loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
   }
 ];
 

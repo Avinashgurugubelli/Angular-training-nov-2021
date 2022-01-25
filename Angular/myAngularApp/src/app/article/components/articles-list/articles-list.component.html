@@ -1,0 +1,38 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Avatar</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="articles$ | async as articles">
+        <tr
+            *ngFor="let item of articles; let i = index; let isFirst = first; let islast = last; let isEven =  even; let isOdd = odd">
+            <td>
+                {{item.id}}
+            </td>
+            <td>
+                {{item.name}}
+            </td>
+            <td>
+                {{item.avatar}}
+            </td>
+            <td>
+                {{item.createdAt}}
+            </td>
+            <td>
+                <a [routerLink]="['/articles/article-form', item.id]">
+                    <i class="bi bi-pencil-square mx-2" style="cursor: pointer;"></i>
+                </a>
+
+                <i class="bi bi-trash mx-2" style="cursor: pointer;" (click)="delete(item.id)"></i>
+            </td>
+        </tr>
+        <tr *ngIf="articles.length == 0">
+            <td colspan="4">No data to display</td>
+        </tr>
+    </tbody>
+</table>

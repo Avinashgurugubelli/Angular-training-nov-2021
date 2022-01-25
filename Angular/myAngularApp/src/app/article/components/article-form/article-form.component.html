@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="mx-5 my-5">
+        
+        <h2 class="mb-3 text-danger">
+            <i class="bi bi-arrow-left-circle-fill me-3" style="cursor: pointer;" (click)="goToArticles()" data-bs-toggle="tooltip" data-bs-placement="top" title="Go back to articles"></i>
+            <span>{{formContext === 'create' ? 'Add new article' : 'Edit Article'}}</span>
+        </h2>
+        <div class="row" *ngIf="showForm">
+            <form [formGroup]="articleForm">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="id">Article Id </label>
+                        <input type="text" class="form-control" [attr.disabled]="true" formControlName="id" id="id">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" formControlName="name" id="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avatar">Avatar</label>
+                        <input type="text" class="form-control" formControlName="avatar" id="avatar">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="createdAt">Created At</label>
+                        <input type="text" class="form-control" [attr.disabled]="true" formControlName="createdAt" id="createdAt">
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-12">
+                        <button class="btn btn-success" (click)="saveArticle()">{{formContext === 'create' ? 'Save' : 'Update'}}</button>
+                    </div>
+                </div>
+            </form>
+            <h4 class="mb-3 text-success" *ngIf="message">{{message}}</h4>
+        </div>
+    </div>
+</div>
