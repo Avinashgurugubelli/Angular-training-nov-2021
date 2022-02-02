@@ -1,3 +1,4 @@
+import { MessageListComponent } from './life-cycle-hooks/components/message-list/message-list.component';
 import { SubscriberComponent } from './observables/components/subscriber/subscriber.component';
 import { EmployeeTableComponent } from './nested-components/employees-table/employees-table.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'observable-with-sibling-example', component: ObservableContainerComponent
+  },
+  {
+    path: 'life-cycle-hooks', component: MessageListComponent
   },
   {
     path: 'articles',

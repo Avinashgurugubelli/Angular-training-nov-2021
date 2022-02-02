@@ -1,3 +1,5 @@
+import { MessageListComponent } from './life-cycle-hooks/components/message-list/message-list.component';
+import { MessageComponent } from './life-cycle-hooks/components/message/message.component';
 import { SubscriberTwoComponent } from './observables/components/subscriber-two/subscriber-two.component';
 import { EmployeeService } from './nested-components/services/employee.service';
 import { EmployeeFilterComponent } from './nested-components/employee-filter/employee-filter.component';
@@ -33,7 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     EventGeneratorComponent,
     ObservableContainerComponent,
     SubscriberTwoComponent,
-    MessageGeneratorComponent
+    MessageGeneratorComponent,
+    MessageComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,

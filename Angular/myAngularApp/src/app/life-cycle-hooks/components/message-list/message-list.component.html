@@ -1,0 +1,10 @@
+<ng-container *ngFor="let item of messages">
+    <message [message]="item"></message>
+</ng-container>
+
+<div class="my-5">
+    <button type="button" class="btn btn-success" (click)="addMsg()">Add Joke
+    </button>
+    <button type="button" class="btn btn-danger" (click)="deleteMsgs()">Clear Jokes
+    </button>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+    import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 import { ArticleFormComponent } from './components/article-form/article-form.component';
